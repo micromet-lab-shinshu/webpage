@@ -1,0 +1,36 @@
+# Time-stamp: <2016-02-18 17:50:07 hiwata>
+
+#Alias
+alias rm       'rm -i'
+alias cp       'cp -i'
+alias mv       'mv -i'
+alias s        'source ~/.tcshrc'
+alias cd       'cd \!* ; pwd ; ls'
+alias x        exit
+alias ls       'ls -F --color=auto'
+alias lsa      'ls -a --color=auto'
+alias lsl      'ls -alh --color=auto'
+alias du       'du -hs * .'
+alias df       'df -h'
+alias em       'xemacs \!* &'
+alias h        history
+alias free     'free -m'
+alias ssh      'ssh -X'
+alias acro     'acroread \!* &'
+
+#set complete
+complete cd        'p/*/d/'
+complete rmdir     'p/*/d/'
+complete latex     'p/*/f:*.tex/'
+complete platex    'p/*/f:*.tex/'
+complete bibtex    'p/*/f:*.aux/'
+complete xdvi      'p/*/f:*.dvi/'
+complete dvips     'p/*/f:*.dvi/'
+complete dvipdfmx  'p/*/f:*.dvi/'
+complete perl      'p/*/f:*.pl/'
+complete xpdf      'p/*/f:*.pdf/'
+complete gpdf      'p/*/f:*.pdf/'
+complete gv        'p/*/f:*.{ps,eps}/'
+complete gfortran  'p/*/f:*.{f,f95}/'
+complete ps2pdf    'p/*/f:*.ps/'
+complete acro      'p/*/f:*.pdf/'
