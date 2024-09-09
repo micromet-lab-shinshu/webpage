@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- <meta charset="utf-8" /> -->
+    <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> -->
+    <meta name="description" content="信州大学理学部理学科物質循環学コースの微気象学研究室のウェブページ">
+    <meta name="auther" content="岩田拓記">
+    <meta name="keywords" content="Debian Linux">
+    <title>Laboratory of Micrometeorology, Shinshu University</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <!--[endif]-->
+  </head>
+  <body>
+    <header>
+      <H2>信州大学 理学部 理学科 物質循環学コース</H2>
+      <H1>微気象学研究室 (Laboratory of Micrometeorology)</H1>
+    </header>
+    <section>
+      <article>
+        <h3><a name="INSTALL">[Debian Linuxのインストール]</a></h3>
+          <ul>
+            <dt>インストールCDの作成</dt>
+            <li>debianウェブページからisoファイルをダウンロードする。ファイルを右クリックし、「ディスクイメージの書き込み」からCDに書き込むことができる。
+          </ul>
+        <h3><a name="PACKAGE">[必要なパッケージの追加]</a></h3>
+          <ul>
+            <dt>sudo</dt>
+            <ol>
+              <li>スーパーユーザー権限でコマンドを実行する</li>
+            </ol>
+            <dt>emacs, xemacs21</dt>
+            <ol>
+              <li>エディター</li>
+            </ol>
+            <dt>aptitude</dt>
+            <ol>
+              <li>パッケージマネージャー</li>
+            </ol>
+            <dt>samba</dt>
+            <ol>
+              <li>LinuxのディレクトリをWindowsに共有</li>
+            </ol>
+            <dt>tcsh</dt>
+            <ol>
+              <li>好みのシェル</li>
+            </ol>
+            <dt>latex209-base, yatex, jbibtex-base, texlive-full</dt>
+            <ol>
+              <li>論文を書く。</li>
+            </ol>
+            <dt>gnuplot</dt>
+            <ol>
+              <li>作図ソフト</li>
+            </ol>
+            <dt>gv, xpdf</dt>
+            <ol>
+              <li>ps, pdfファイルのビューアー</li>
+            </ol>
+            <dt>gfortran</dt>
+            <ol>
+              <li>fortranのコンパイラ</li>
+            </ol>
+            <dt>r-base</dt>
+            <ol>
+              <li>統計解析ソフト</li>
+            </ol>
+          </ul>
+        <h3><a name="ENVIRON">[環境整備]</a></h3>
+          <ul>
+            <dt>CtrlキーとCaps Lockキーの入れ替え</dt>
+            <ol>
+              <li>Tweakを起動する。「キーボードとマウス」タブの「追加のレイアウトオプション」をクリック。「Ctrl position」から「CtrlとCaps Lockを入れ替える」を選択</li>
+            </ol>
+            <dt>sudoの設定</dt>
+            <ol>
+              <li>スーパーユーザーになり、visudoコマンドを実行する。これで/etc/sudoersを編集することになる。User privilege specificationの下に「ユーザー名　ALL=(ALL:ALL) ALL」を追記し保存。「Ctrl+x」を押すと、変更を保存するか聞かれるので「y」を入力する。</li>
+            </ol>
+            <dt>ログインシェルの変更</dt>
+            <ol>
+              <li>chshコマンドを実行する。</li>
+            </ol>
+            <dt>シェルの環境</dt>
+            <ol>
+              <li><a href="debian/tcshrc">tcshrc</a>と<a href="debian/alias">alias</a>をホームディレクトリにそれぞれ.tcshrcと.aliasとして保存する。</li>
+            </ol>
+            <dt>aptitudeのソースリストの編集</dt>
+            <ol>
+              /etc/apt/sources.listを編集。各項目の最後にcontribとnon-freeを追記。</li>
+            </ol>
+            <dt>xemacsの環境</dt>
+            <ol>
+              <li><a href="debian/init.el">init.el</a>をホームディレクトリの.xemacs下に保存する。</li>
+            </ol>
+            <dt>マウントの設定</dt>
+            <ol>
+              <li>/etc/fstabを編集する。UUID=xxxx  /mnt/xxx  ext3  defaults  0  2</li>
+              <li>UUIDはsudo blkid -o listで調べることができる。</li>
+            </ol>
+            <dt>sambaの設定</dt>
+            <ol>
+              <li>sudo pdbedit -a "ユーザー"でユーザーを追加する。</li>
+              <li>/etc/samba/smb.confを編集する。</li>
+              <li>sudo systemctl restart smbd nmbdでsambaを再起動する。</li>
+            </ol>
+            <dt>スリープを無効にする</dt>
+            <ol>
+              <li>sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target</li>
+              <li>スリープ状態になるとsambaでのファイル共有も停止してしまうため。</li>
+            </ol>
+          </ul>
+      </article>
+    </section>
+    <nav>
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="#INSTALL">インストール</a></li>
+        <li><a href="#PACKAGE">パッケージの追加</a></li>
+        <li><a href="#ENVIRON">環境整備</a></li>
+      </ul>
+    </nav>
+    <footer>
+      <a href="#TOP">▲ページトップに戻る</a>
+    </footer>
+  </body>
+</html>
