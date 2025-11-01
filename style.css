@@ -51,8 +51,8 @@ li {
   position: absolute;
   left: 0;
   top: 0;
-  -webkit-animation: anime 63s 0s infinite;
-  animation: anime 63s 0s infinite;
+  -webkit-animation: anime 64s 0s infinite;
+  animation: anime 64s 0s infinite;
 }
 
 .item1:nth-of-type(2) {
