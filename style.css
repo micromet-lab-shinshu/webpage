@@ -6,10 +6,6 @@ body {
   font-family: "BIZ UDPGothic";
 }
 
-h1, h2 {
-  text-align: center;
-}
-
 p {
   line-height: 30px;
 }
@@ -24,11 +20,12 @@ dt {
 #headline {
   border-bottom: solid 1px rgb(100,100,100);
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .navi {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .spacer {
