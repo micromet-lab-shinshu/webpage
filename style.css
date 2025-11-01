@@ -88,13 +88,13 @@ li {
   0% {
     opacity: 0;
   }
-  30% {
+  20% {
     opacity: 1;
   }
-  35% {
+  25% {
     opacity: 1;
   }
-  50% {
+  40% {
     opacity: 0;
     z-index: 9;
   }
@@ -107,13 +107,13 @@ li {
   0% {
     opacity: 0;
   }
-  30% {
+  20% {
     opacity: 1;
   }
-  35% {
+  25% {
     opacity: 1;
   }
-  50% {
+  40% {
     opacity: 0;
     z-index: 9;
   }
