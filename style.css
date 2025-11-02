@@ -6,6 +6,10 @@ body {
   font-family: "BIZ UDPGothic";
 }
 
+h1 {
+  margin-bottom: 30px;
+}
+
 p {
   line-height: 30px;
 }
